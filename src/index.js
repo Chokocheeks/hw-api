@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import Flag from './components/Flag';
+import { store } from '../src/store/store';
+import { Countries } from './Countries';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      {/* <App /> */}
+      <Countries/>
+    </Provider>
   </React.StrictMode>
 );
 
