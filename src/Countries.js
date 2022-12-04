@@ -14,22 +14,17 @@ export const Countries = () => {
 
     const tempArr = [...countries];
 
-   
-        const [index, setIndex] = useState(0);
-      
-        const handleSelect = (selectedIndex, e) => {
-          setIndex(selectedIndex);
-        };
 
     return(
-        <Carousel activeIndex={index} onSelect={handleSelect}>
+        <Carousel>
             {tempArr.map((el) => (
                 <Carousel.Item interval={1000}>
-                    <img className="d-block w-100"
+                    <img className="d-block"
+                    style={{ height: '80vh' }}
                      src={el.flags.svg}
                      alt="First slide"/>
-                    <Carousel.Caption>
-                    <h3>{el.population}</h3>
+                    <Carousel.Caption className='carouselFont'>
+                    <h3>{el.name. common}</h3>
                     <p>Capital: {el.capital}<br/>
                     Population: {el.population}<br/></p>
                     </Carousel.Caption>
